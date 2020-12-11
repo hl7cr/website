@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>HL7 Costa Rica</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Sitio web de la comunidad de usuarios de HL7 en Costa Rica">
+  <meta name="author" content="Alejandro Benavides Garro">
+  <link rel="icon" type="image/ico" href="http://www.hl7.org/favicon.ico" />
+  <link rel="stylesheet" href="lib/css/styles.css"/>
+  <link rel="stylesheet" href="lib/particles/particles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" type="text/css" href="lib/countdowntime/animate/animate.css">
+  <link rel="stylesheet" type="text/css" href="lib/countdowntime/util.css">
+  <link rel="stylesheet" type="text/css" href="lib/countdowntime/countdowntime.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/dd838ebd26.js" crossorigin="anonymous"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #CC0000;
+    font-size: 50px;
+  }
+  .logo {
+    color: #CC0000;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #CC0000;
+  }
+  .carousel-indicators li {
+    border-color: #CC0000;
+  }
+  .carousel-indicators li.active {
+    background-color: #CC0000;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #CC0000;
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #CC0000;
+    background-color: #fff !important;
+    color: #CC0000;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #CC0000 !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #CC0000;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #CC0000;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #CC0000 !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+
+  .jumbotron {
+    background-color: #CC0000;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+
+  #wellcome1 {
+    height: 325px;
+    width: auto;
+    background-image: url("images/img1.jpg");
+    background-color: #f6f6f6;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-size: 100%;
+  }
+
+  .hl7-logo {
+    top: 43%;
+    left: 43%;
+  }
+
+  #wellcome2 {
+    height: 325px;
+    width: auto;
+    background-image: url("images/img2.jpg");
+    background-color: #f6f6f6;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-size: 100%;
+  }
+
+  #wellcome3 {
+    height: 325px;
+    width: auto;
+    background-image: url("images/img3.jpg");
+    background-color: #f6f6f6;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-size: 100%;
+  }
+
+  #wellcome4 {
+    height: 325px;
+    width: auto;
+    background-image: url("images/img4.jpg");
+    background-color: #f6f6f6;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-size: 100%;
+  }
+
+  #footer1 {
+    height: 325px;
+    width: 100%;
+    position: relative;
+    background-image: url("images/interoperabilidad.jpg");
+    background-color: #f6f6f6;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+
+  #footer1-text {
+    position: absolute;
+	  bottom: 0;
+  }
+
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #CC0000;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="Home" data-spy="scroll" data-target=".navbar" data-offset="60">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html#Home">
+          HL7 Costa Rica
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html#about" rel="bookmark">ACERCA DE</a></li>
+          <li><a href="index.html#standards" rel="bookmark">EST&Aacute;NDARES</a></li>
+          <li><a href="index.html#contact" rel="bookmark">CONTACTO</a></li>
+          <li><a class="fab fa-blogger-b" href="http://hl7es.blogspot.com" target="_blank" rel="external">LOG</a></li>
+          <li><a class="fab fa-linkedin-in" href="https://www.linkedin.com/groups/3832088/" target="_blank" rel="external"></a></li>
+          <li><a class="fab fa-facebook-f" href="https://www.facebook.com/groups/hl7es/" target="_blank" rel="external"></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- particles -->
+  <div>
+    <!-- particles.js container -->
+    <div id="particles-js">
+      <div class="hl7-logo">
+        <img src="images/hl7-logo-cr.png" alt="HL7 Costa Rica">
+      </div>
+
+    </div>
+
+    <!-- scripts -->
+    <script src="lib/particles/particles.js"></script>
+    <script src="lib/particles/hl7-particles.js"></script>
+
+  </div>
+
+  <div id="wellcome" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#wellcome" data-slide-to="0" class="active"></li>
+      <li data-target="#wellcome" data-slide-to="1"></li>
+      <li data-target="#wellcome" data-slide-to="2"></li>
+      <li data-target="#wellcome" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div id="wellcome1" class="item active">
+        <div class="carousel-caption">
+          <h3>Bienvenido</h3>
+          <p>Sitio web de la comunidad de usuarios de HL7 en Costa Rica.</p>
+        </div>
+      </div>
+
+      <div id="wellcome2" class="item">
+        <div class="carousel-caption">
+          <h3>Est&aacute;ndares</h3>
+          <p>HL7 desarrolla los mejores estándares de interoperabilidad en salud.</p>
+        </div>
+      </div>
+
+      <div id="wellcome4" class="item">
+        <div class="carousel-caption">
+          <h3>mHealth Apps</h3>
+          <p>HL7 cuenta con estándares para aplicaciones móviles de salud y promueve buenas prácticas para esta industria.</p>
+        </div>
+      </div>
+
+      <div id="wellcome3" class="item">
+        <div class="carousel-caption">
+          <h3>Eventos</h3>
+          <p>HL7 ofrece eventos para el fortalecimiento de la industria mundial de la salud y
+          programas de capacitaci&oacute;n para la implementaci&oacute;n exitosa de los est&aacute;ndares HL7.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="index.html#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="index.html#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+  <!-- Container (About Section) -->
+  <div id="about" class="container-fluid">
+    <div class="row">
+      <div class="col-sm-8">
+        <h3>Sitio web de la comunidad de usuarios de HL7 en Costa Rica</h3><br>
+        <h2>Acerca de HL7</h2>
+        <h4>Fundada en 1987, <strong>Health Level Seven International</strong> (HL7) es una entidad sin
+        &aacute;nimo de lucro, acreditada por ANSI como organizaci&oacute;n desarrolladora de est&aacute;ndares,
+        dedicada a porporcionar un marco integral de especificaciones para el intercambio,
+        integraci&oacute;n y recuperaci&oacute;n de informaci&oacute;n electr&oacute;nica de salud, con el fin facilitar
+        la toma de decisiones cl&iacute;nicas y administrativas en los servicios de salud.</h4>
+
+        <p>HL7 cuenta con el respaldo de más de 1.600 miembros de más de 50 países,
+        incluidos más de 500 miembros corporativos que representan a prestadores de
+        servicios de salud, universidades, agencias gubernamentales, aseguradores,
+        compañías farmacéuticas, proveedores de tecnología de información
+        y firmas consultoras especializadas en el sector salud.</p>
+        <br>
+        <form action="http://www.hl7.org/" target="_blank">
+          <button class="btn btn-default btn-lg">HL7 Internacional&nbsp;&nbsp;<i class="fas fa-external-link-alt"></i></button>
+        </form>
+      </div>
+      <div class="col-sm-4">
+        <a href="http://www.hl7.org/" target="_blank" rel="external">
+          <span class="fas fa-globe-americas logo slideanim"></span>
+          <!--<img src="images/HL7_International.png" alt="HL7" width="300">-->
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid bg-grey">
+    <div class="row">
+      <div class="col-sm-4">
+        <span class="fas fa-laptop-medical logo slideanim"></span>
+      </div>
+      <div class="col-sm-8">
+        <h2>Visi&oacute;n de HL7</h2>
+        <h4>Un mundo en el cual todos puedan acceder y utilizar, en forma segura,
+        los datos de salud correctos, cuando y donde se necesiten.</h4>
+        <h2>Misi&oacute;n de HL7</h2>
+        <h4>Proporcionar estándares que permitan la interoperabilidad de los datos de salud a nivel global.</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container (standards Section) -->
+    <div id="standards" class="container-fluid">
+      <div class="text-center">
+        <h2>Est&aacute;ndares</h2>
+        <h4>Principales especificaciones</h4>
+      </div>
+      <div class="row slideanim">
+        <div class="col-sm-4 col-xs-12">
+          <div class="panel panel-default text-center">
+            <div class="panel-heading">
+              <h1>HL7&reg; V2</h1>
+            </div>
+            <div class="panel-body">
+              <h3 class="fas fa-paper-plane"></h3>
+              <p><br></p>
+              <p>Es un est&aacute;ndar de mensajer&iacute;a para el intercambio electr&oacute;nico de datos cl&iacute;nicos entre
+              sistema de informaci&oacute;n.</p>
+              <p><br></p>
+              <p>Es el est&aacute;ndar de inform&aacute;tica m&eacute;dica m&aacute;s ampliamente implementado en el mundo.</p>
+              <p><br></p>
+              <p><br></p>
+            </div>
+            <div class="panel-footer">
+              <p>&Uacute;ltima versi&oacute;n</p>
+              <h3>2.8.2</h3>
+              <h4>2015</h4>
+              <form action="http://www.hl7.org/implement/standards/" target="_blank">
+                <button class="btn btn-lg">Ver m&aacute;s</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class="panel panel-default text-center">
+            <div class="panel-heading">
+              <h1>CDA&reg;</h1>
+            </div>
+            <div class="panel-body">
+              <h3 class="far fa-file-medical-alt"></h3>
+              <p><br></p>
+              <p>Es un est&aacute;ndar de Arquitectura de Documentos Cl&iacute;nicos, que especifica su
+              estructura y sem&aacute;ntica con el fin de intercambiarlos electr&oacute;nicamente
+              entre organizaciones que hacen parte del sistema de atenci&oacute;n en salud.</p>
+              <p><br></p>
+              <p><br></p>
+              <p><br></p>
+              <p><br></p>
+            </div>
+            <div class="panel-footer">
+              <p>&Uacute;ltima versi&oacute;n</p>
+              <h3>R2</h3>
+              <h4>2005</h4>
+              <form action="http://www.hl7.org/implement/standards/" target="_blank">
+                <button class="btn btn-lg">Ver m&aacute;s</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class="panel panel-default text-center">
+            <div class="panel-heading">
+              <h1>FHIR&reg;</h1>
+            </div>
+            <div class="panel-body">
+              <h3 class="fas fa-cloud-upload-alt"></h3>
+              <p>Es la &uacute;ltima generaci&oacute;n de est&aacute;ndares de interoperabilidad HL7.</p>
+              <p><br></p>
+              <p>Dise&ntilde;ado para facilitar el intercambio de informaci&oacute;n
+              entre todos los involucrados en el sistema de atenci&oacute;n en salud
+              (pacientes, prestadores, aseguradores, agencias gubernamentales, investigadores, etc.).</p>
+              <p>Además, agiliza el desarrollo e integración de aplicaciones móviles de salud.</p>
+            </div>
+            <div class="panel-footer">
+              <p>&Uacute;ltima versi&oacute;n</p>
+              <h3>R4</h3>
+              <h4>2018</h4>
+              <form action="http://hl7.org/fhir/" target="_blank">
+                <button class="btn btn-lg">Ver m&aacute;s</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container (Contact Section) -->
+    <div id="contact" class="container-fluid bg-grey">
+      <h2 class="text-center">CONTACTO</h2>
+      <div class="row">
+        <div class="col-sm-5">
+          <p><span class="glyphicon glyphicon-map-marker"></span> San Francisco, Liliana</p>
+          <p><span class="glyphicon glyphicon-globe"></span> Heredia, Costa Rica</p>
+          <p><span class="glyphicon glyphicon-phone"></span><i class="fab fa-whatsapp"></i> +506 8828-5301</p>
+          <p><span class="glyphicon glyphicon-phone"></span> +506 7110-8978</p>
+          <p><span class="glyphicon glyphicon-envelope"></span> info@hl7.or.cr</p>
+          <br>
+          <div class="row align-items-center slideanim">
+            <div class="col-6 col-md-4 justify-content-center">
+              <a href="http://hl7es.blogspot.com" target="_blank" rel="external">
+                <img src="images/blogger-2.png" alt="Blogger">
+              </a>
+            </div>
+            <div class="col-6 col-md-4 justify-content-center">
+              <a href="https://www.linkedin.com/groups/3832088/" target="_blank" rel="external">
+                <img src="images/linkedin-2.png" alt="Linkedin">
+              </a>
+            </div>
+            <div class="col-6 col-md-4 justify-content-center">
+              <a href="https://www.facebook.com/groups/hl7es/" target="_blank" rel="external">
+                <img src="images/facebook-2.png" alt="Facebook">
+              </a>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-7 slideanim">
+          <iframe width="700" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=Costa%20Rica%2C%20Heredia%2C%20San%20Francisco%2C%20Urbanizacion%20Liliana&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Image of location/map -->
+    <div id="footer1">
+        <span id="footer1-text">Photo by HL7 Costa Rica</span>
+    </div>
+
+    <footer class="container-fluid text-center">
+      <a href="index.html#Home" title="To Top">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </a>
+    </footer>
+
+    <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#Home']").on('click', function(event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+
+      $(window).scroll(function() {
+        $(".slideanim").each(function(){
+          var pos = $(this).offset().top;
+
+          var winTop = $(window).scrollTop();
+          if (pos < winTop + 600) {
+            $(this).addClass("slide");
+          }
+        });
+      });
+    })
+  </script>
+
+</body>
+</html>
